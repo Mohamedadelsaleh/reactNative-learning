@@ -1,51 +1,44 @@
-import { useState } from 'react';
-import { Button, Image, Modal, Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, View} from 'react-native';
 
 export default function HomeScreen() {
-  const [modalVisible, setModalVisible] = useState(false);
+
   return (
-    <View style={{flex: 1, backgroundColor: 'plum', paddingTop: 60}}>
-      <Button title='Press' onPress={() => setModalVisible(true)} color={'green'} />
-      <StatusBar backgroundColor={'black'} barStyle={'light-content'} />
-      <Modal visible={modalVisible} onRequestClose={() => setModalVisible(false)}
-       animationType='slide' presentationStyle='formSheet'
-      >
-        <Text>Modal</Text>
-        <Button title='Close' onPress={() => setModalVisible(false)} color={'red'} />
-      </Modal>
-      <ScrollView>
-        <Pressable onPress={() => console.log('Image Pressed')}>
-        <Image source={require('../../assets/images/adaptive-icon.png')} style={{width: 300, height: 300}} />
-        </Pressable>
+    <ScrollView>
+      <View style={{
+          flex:1, alignItems:'center', 
+          backgroundColor: 'lightblue', 
+          gap: 16, 
+          padding: 32,
+          }}>
+        <Text>Home Screen</Text>
+        <Image
+          source={require('../../assets/images/react-logo.png')}
+        />
+        <ImageBackground source={require('../../assets/images/react-logo.png')} style={{width: 200, height: 200, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={styles.titleContainer}>
+            <Text>Title</Text>
+          </View>
+        </ImageBackground>
         <Text>
-          This is a demo app for the React Native CLI. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
-          {'\n\n'}
-          This app is a simple example of how to use the React Native CLI to create a new app. It is a simple app that shows how to use the React Native CLI to create a new app.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </Text>
-        <Image source={require('../../assets/images/adaptive-icon.png')} style={{width: 300, height: 300}} />
-      </ScrollView>
-      
-    </View>
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Image
+          source={require('../../assets/images/react-logo.png')}
+        />
+        <ImageBackground source={require('../../assets/images/react-logo.png')} style={{width: 200, height: 200, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={styles.titleContainer}>
+            <Text>Title</Text>
+          </View>
+        </ImageBackground>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -58,12 +51,5 @@ const styles = StyleSheet.create({
   stepContainer: {
     gap: 8,
     marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
   },
 });
